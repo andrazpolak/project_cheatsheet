@@ -1,15 +1,44 @@
-import Head from "next/head";
+import Card from "react-bootstrap/Card";
+import { FlexboxGrid } from "rsuite";
 
-export default function Python() {
+function KnowledgeCard(props) {
+  const { title, content } = props;
   return (
     <>
-      <Head>
-        <title>Cheat Sheet</title>
-        <meta name="description" content="Cheat sheet for programmers" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1>Python</h1>
+      <Card style={{ width: "18rem" }}>
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{content}</Card.Text>
+        </Card.Body>
+      </Card>
     </>
   );
+}
+
+export default function Python(props) {
+  const { items } = props;
+  console.log(items);
+  return (
+    <>
+      <FlexboxGrid>
+        {items.map((item) => (
+          <FlexboxGrid.Item>
+            <KnowledgeCard {...item} />
+          </FlexboxGrid.Item>
+        ))}
+      </FlexboxGrid>
+    </>
+  );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      items: [
+        { title: "Intro", content: "This is the intro page" },
+        { title: "Data types", content: "Data types intro" },
+        { title: "Console", content: "Console inputs" },
+      ],
+    },
+  };
 }

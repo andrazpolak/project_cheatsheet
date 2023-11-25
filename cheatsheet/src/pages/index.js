@@ -9,20 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>Get started by editing</p>
-        </div>
-
-        <ul className={styles.grid}>
-          <li>
-            <Link href="/regex">Regex</Link>
-          </li>
-          <li>
-            <Link href="/python">Python</Link>
-          </li>
-        </ul>
-      </main>
+      <h1>Welcome to cheat sheet</h1>
     </>
   );
 }
