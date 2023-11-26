@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { FlexboxGrid } from "rsuite";
+import { getAllKnowledgeCard } from "../lib/get-knowledge-card";
 
 function KnowledgeCard(props) {
   const { title, content } = props;
@@ -32,13 +33,10 @@ export default function Python(props) {
 }
 
 export async function getStaticProps() {
+  const knowledgeCards = getAllKnowledgeCard();
   return {
     props: {
-      items: [
-        { title: "Intro", content: "This is the intro page" },
-        { title: "Data types", content: "Data types intro" },
-        { title: "Console", content: "Console inputs" },
-      ],
+      items: knowledgeCards,
     },
   };
 }
