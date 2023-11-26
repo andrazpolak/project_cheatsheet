@@ -1,8 +1,6 @@
 ---
-title: "Python"
-author: Andraz Polak
+language: "Regex"
+title: "Intro"
 ---
 
-## Regex - intro
-
-Python introduction
+Short introduction to Regular expression

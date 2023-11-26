@@ -16,11 +16,11 @@ export function getKnowledgeCard(fileName) {
   //   const fileName = filePath;
   const filePath = path.join(knowledgeCardDirectory, fileName);
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { metadata, content } = matter(fileContent);
+  const { data, content } = matter(fileContent);
 
   const knowledgeCard = {
     fileName,
-    metadata,
+    ...data,
     content,
   };
 
@@ -31,7 +31,6 @@ export function getAllKnowledgeCard() {
   const files = getKnowledgeCardFiles();
 
   const cards = files.map((file) => {
-    console.log("File:", file);
     return getKnowledgeCard(file);
   });
 

@@ -1,9 +1,19 @@
 ---
-group: Python
-title: Console
-author: Andraz Polak
+language: "Python"
+title: "Console"
 ---
 
-## Python - console
+```Python
+print("Hello world")
+```
 
-Python introduction
+```Python
+print("Hello","world")
+```
+
+- Print dictionary
+
+```Python
+from pprint import pprint
+pprint("Hello","world")
+```

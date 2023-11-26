@@ -1,20 +1,7 @@
-import Card from "react-bootstrap/Card";
 import { FlexboxGrid } from "rsuite";
 import { getAllKnowledgeCard } from "../lib/get-knowledge-card";
+import KnowledgeCard from "../components/knowledge-card";
 
-function KnowledgeCard(props) {
-  const { title, content } = props;
-  return (
-    <>
-      <Card style={{ width: "18rem" }}>
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{content}</Card.Text>
-        </Card.Body>
-      </Card>
-    </>
-  );
-}
 
 export default function Python(props) {
   const { items } = props;
@@ -23,7 +10,7 @@ export default function Python(props) {
     <>
       <FlexboxGrid>
         {items.map((item) => (
-          <FlexboxGrid.Item>
+          <FlexboxGrid.Item key={item.fileName}>
             <KnowledgeCard {...item} />
           </FlexboxGrid.Item>
         ))}

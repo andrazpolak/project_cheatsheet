@@ -1,8 +1,6 @@
 ---
-title: "Python"
-author: Andraz Polak
+language: "Python"
+title: "Intro"
 ---
 
-## Python - intro
-
-Python introduction
+Short introduction to Python

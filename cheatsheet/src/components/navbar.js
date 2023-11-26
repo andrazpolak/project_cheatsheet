@@ -10,6 +10,7 @@ const NavLink = React.forwardRef((props, ref) => {
     </Link>
   );
 });
+NavLink.displayName = "NavLink";
 
 export default function Navbar() {
   const [active, setActive] = React.useState("/");
